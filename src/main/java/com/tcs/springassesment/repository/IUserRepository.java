@@ -6,6 +6,8 @@ import com.tcs.springassesment.entity.Question;
 import com.tcs.springassesment.entity.User;
 
 
-public interface IUserRepository extends CrudRepository<Question, Integer> {
+public interface IUserRepository extends CrudRepository<User, Integer> {
+
+	
 
 }
