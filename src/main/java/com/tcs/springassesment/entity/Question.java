@@ -38,6 +38,10 @@ public class Question {
 	@ManyToOne
 	private User user;
 
+	public Question(int i, String string, boolean add, int j, int k, Object object) {
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
 		return "Question [id=" + id + ", question=" + question + ", answers=" + answers + ", vote=" + vote + ", u_id="
