@@ -2,11 +2,13 @@ package com.tcs.springassesment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -58,5 +60,16 @@ class SpringAssesmentApplicationTests {
 		}
 	}
 	
-
+	@Test
+	void testQuestionHasZeroVotes() {
+		Question q1= new Question(2,"nmdcb",li.add("nbbdjbcjhbd"),0,4,null);
+		assertEquals(q1.getVote(),0);
+	}
+	
+	@Test
+	void testDeleteAppointment() {
+		Optional<Question> a1 = Optional.of(new Question(2,"nmdcb",li.add("nbbdjbcjhbd"),0,4,null));
+		when(repo.findById(2)).thenReturn(a1).thenReturn(null);
+		assertNull(repo.findById(2));
+	}
 }
